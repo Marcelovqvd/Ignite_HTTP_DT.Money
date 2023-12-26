@@ -15,7 +15,6 @@ export const Content = styled(Dialog.Content)`
   border-radius: 6px;
   padding: 2.5rem 3rem;
   background: ${(props) => props.theme['gray-800']};
-
   position: fixed;
   top: 50%;
   left: 50%;
@@ -23,7 +22,6 @@ export const Content = styled(Dialog.Content)`
 
   form {
     margin-top: 2rem;
-
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -33,9 +31,11 @@ export const Content = styled(Dialog.Content)`
       border: 0;
       background: ${(props) => props.theme['gray-900']};
       color: ${(props) => props.theme['gray-300']};
+      background: ${(props) => props.theme['gray-900']};
+      color: ${(props) => props.theme['gray-300']};
       padding: 1rem;
-
       &::placeholder {
+        color: ${(props) => props.theme['gray-500']};
         color: ${(props) => props.theme['gray-500']};
       }
     }
@@ -50,8 +50,11 @@ export const Content = styled(Dialog.Content)`
       border-radius: 6px;
       margin-top: 1.25rem;
       cursor: pointer;
-
-      &:hover {
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      &:not(:disabled):hover {
         background: ${(props) => props.theme['green-700']};
         transition: background-color 0.2s;
       }
@@ -88,8 +91,6 @@ export const TransactionTypeButton = styled(
   padding: 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
   border-radius: 6px;
   cursor: pointer;
   border: 0;
@@ -113,7 +114,6 @@ export const TransactionTypeButton = styled(
       props.variant === 'income'
         ? props.theme['green-500']
         : props.theme['red-500']};
-
     svg {
       color: ${(props) => props.theme.white};
     }

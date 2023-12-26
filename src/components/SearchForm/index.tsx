@@ -1,6 +1,7 @@
 import { Header } from '../../components/Header';
 import { Summary } from '../../components/Summary';
-import { SearchForm } from './components/SearchForm';
+import { SearchForm } from '../../pages/Transactions/components/SearchForm';
+
 import {
   PriceHighlight,
   TransactionsContainer,
